@@ -26,3 +26,4 @@ I had it like the following and it was marked wrong despite it not printing any 
     <?php #Print POST data here 
     print_r($_POST);?>
 
+In my testing it was a comments that was causing the issue.
