@@ -1,0 +1,5 @@
+Note to 
+use "{$VAR}"
+instead of "${VAR}"
+
+as "#{VAR}" was described as deprecated by a warning on my local env

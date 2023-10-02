@@ -1,0 +1,10 @@
+Beyond Strings:
+
+This section covers calling Variables and Functions,
+and using them in conjunction with the echo function
+
+some additional notes:
+
+my php did not like variables like "${var}" to be echoed.
+
+it preferred "{$var}"
