@@ -1,0 +1,7 @@
+Introduction:
+
+This Lesson starts with describing PHP's use and interaction with HTML.
+
+The Lesson features a static web page with NO PHP.
+
+This lesson is meant to show an example of a static Web Page. 

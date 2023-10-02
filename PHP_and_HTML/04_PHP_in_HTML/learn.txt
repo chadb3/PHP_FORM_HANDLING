@@ -1,0 +1,16 @@
+PHP in HTML:
+
+The lesson shows how to embed PHP scripts within HTML
+
+stats with <?php
+
+ends with ?>
+
+note that HTML tags can be included in PHP output
+
+example
+<?php
+echo "<h1>HELLO WORLD!</h1>"
+?>
+
+

@@ -1,0 +1,11 @@
+What is the Back-End?
+
+1. A Web Server - a web server is a computer or program which listens for requests from clients and sends back responses. This component is well suited to handling delivery of static content.
+
+2. An Application Server - This is actually often  a collection of programming logic which is needed to deliver dynamic content to clients (front-end). The application server will often handle other tasks such as site security and interacting with data.
+
+3. A database - important information like usernames and (hashed) password has to be stored and accessed somewhere. A large web application will often have multiple databases to store all different types of data needed to run the site smoothly.
+
+PHP can be used in many capacities in the back-end.
+
+

@@ -1,0 +1,7 @@
+What is the Front-End?
+
+Front-End is what the user sees and interacts with.
+
+may be referred to as client side. 
+
+
