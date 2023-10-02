@@ -1,0 +1,7 @@
+Introduction
+
+This section introduces shorthand php script opening
+"<?php"
+
+we can use
+"<?=" instead
