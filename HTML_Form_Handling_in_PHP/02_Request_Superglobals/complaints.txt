@@ -16,13 +16,13 @@ I had it like the following and it was marked wrong despite it not printing any 
 
     $_REQUEST:
     <?php #Print REQUEST data here
-    print_r ($_REQUEST["get_name"]);?>
+    print_r ($_REQUEST);?>
     <br>
     $_GET:
     <?php #Print GET data here 
-    print_r ($_GET["get_name"]); ?>
+    print_r ($_GET); ?>
     <br>
     $_POST:
     <?php #Print POST data here 
-    print_r($_POST["post_name"]);?>
+    print_r($_POST);?>
 
