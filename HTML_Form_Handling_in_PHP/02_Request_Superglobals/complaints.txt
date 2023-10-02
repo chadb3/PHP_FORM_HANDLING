@@ -1,0 +1,28 @@
+in this lesson,
+
+you are FORCED to put the solution exactly like the following or it will be marked WRONG
+
+    $_REQUEST:
+    <?php print_r($_REQUEST);?>
+    <br>
+    $_GET:
+    <?php print_r($_GET);?>
+    <br>
+    $_POST:
+    <?php print_r($_POST);?>
+
+
+I had it like the following and it was marked wrong despite it not printing any different.
+
+    $_REQUEST:
+    <?php #Print REQUEST data here
+    print_r ($_REQUEST["get_name"]);?>
+    <br>
+    $_GET:
+    <?php #Print GET data here 
+    print_r ($_GET["get_name"]); ?>
+    <br>
+    $_POST:
+    <?php #Print POST data here 
+    print_r($_POST["post_name"]);?>
+

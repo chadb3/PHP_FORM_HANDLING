@@ -1,17 +1,13 @@
 <html>
-
 <body>
     $_REQUEST:
-    <?php #Print REQUEST data here
-    print_r ($_REQUEST);?>
+    <?php print_r($_REQUEST);?>
     <br>
     $_GET:
-    <?php #Print GET data here 
-    print_r ($_GET); ?>
+    <?php print_r($_GET);?>
     <br>
     $_POST:
-    <?php #Print POST data here 
-    print_r($_POST);?>
+    <?php print_r($_POST);?>
     <form method="get">
         GET Form: <input type="text" name="get_name">
         <input type="submit" value="Submit GET">
@@ -22,5 +18,4 @@
     </form>
     <a href="index.php">Reset</a>
 </body>
-
 </html>
