@@ -1,0 +1,9 @@
+POST Form Handling:
+
+This lesson has to do with submitting forms with POST.
+
+it is stored in the $_POST superglobal.
+
+the data is also available in $_REQUEST superglobal
+
+

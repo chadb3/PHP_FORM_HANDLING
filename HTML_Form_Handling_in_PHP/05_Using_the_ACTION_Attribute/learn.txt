@@ -1,0 +1,12 @@
+Using the "action" Attribute:
+
+This lesson has to do with how forms are submitted. 
+
+It notes that it is often not necessary to present the same forms over and over. And it makes sense to move users to a new page.
+
+"action" form element 
+the default action is to submit the form back to the same script.
+
+you can specify a new URL
+
+<form method="get" action="receive_form.php">
