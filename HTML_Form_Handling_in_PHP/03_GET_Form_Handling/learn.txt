@@ -1,0 +1,19 @@
+GET Form Handling:
+
+The following is a form example to get a "first" and "last" name.
+
+<form method="get">
+First name: <input type="text" name="first">
+<br>
+Last name: <input type="text" name="last">
+<br>
+<input type="submit" value="Submit Name">
+</form>
+
+When the form is submitted the data gets stored into $_GET superglobal array
+
+The data is also stored in the $_REQUEST superglobal 
+
+<?=$_GET['first'];?>
+
+would store the last name.
