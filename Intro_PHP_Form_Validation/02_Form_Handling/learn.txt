@@ -1,0 +1,18 @@
+Form Handling:
+
+This lesson focuses on using the POST method attribute for more secure input submissions.
+
+All data will be stored in "$_POST" array. 
+
+POST is said to be "for more secure input submission."
+
+to store data, each input field in under the POST method form needs to have a "name".
+
+example:
+
+<form method="post" ..>
+What is ...: <input type="text" name="user_input1">
+<input type="submit" value="submit Language">
+</form>
+
+echo $_POST["user_input1"]; //prints what ever the user input
