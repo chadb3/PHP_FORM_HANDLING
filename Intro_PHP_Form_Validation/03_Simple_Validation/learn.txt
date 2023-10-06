@@ -1,1 +1,5 @@
 Simple Validation:
+
+This lesson covers validating data AFTER it has been submitted 
+
+This lesson we create a validation function.
