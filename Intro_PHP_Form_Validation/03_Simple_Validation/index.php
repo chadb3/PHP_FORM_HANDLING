@@ -1,5 +1,5 @@
 <?php
-$a_word = $b_word = $c_word = "";
+$a_word = $b_word = $c_word = "x";
 // Note: I am seeing additional issues/warnings that are not present in the codecademy lessons
 // for example:
 // my inputs have something similar to "<br /><b>Warning</b>:  Undefined array key " in each.
@@ -24,13 +24,19 @@ echo phpversion();
   
   
 ?><!DOCTYPE html>
-  
+
 <h1>Time to Practice our ABCs</h1>
 <form method="post" action="post">
     Enter a word that starts with the letter "a":
     <br>
     <input type="text" id="a-word" name="a_word" value="<?= $_POST["a_word"];?>">
-	<p class="error" id="a-error"><?=checkWord($_POST["a_word"],'a'); ?></p>
+	<p class="error" id="a-error">
+	<?php
+	if(isset($_POST["a_word"])){echo checkWord($_POST["a_word"],'a');}
+	
+	
+	?>
+	</p>
     <br>      
       
     <br>     
@@ -55,3 +61,4 @@ echo phpversion();
     <h3>"b" is for: <?= $_POST["b_word"];?><h3>
     <h3>"c" is for: <?= $_POST["c_word"];?><h3>    
 <div>  
+<a href="index.php">Reset</a>
