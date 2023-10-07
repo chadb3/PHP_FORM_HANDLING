@@ -41,7 +41,7 @@ echo phpversion();
     <br>
     Enter a word that starts with the letter "c":
     <br>
-    <input type="text" id="c-word" name="c-word" value="<?= $_POST["a-word"];?>">
+    <input type="text" id="c-word" name="c-word" value="<?= $_POST["c-word"];?>">
     <p class="error" id="c-error"><?=checkWord($_POST["c-word"],'c'); ?></p>
     <br>      
       
