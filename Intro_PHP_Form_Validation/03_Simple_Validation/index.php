@@ -42,8 +42,10 @@
     <br>
     Enter a word that starts with the letter "c":
     <br>
+
     <input type="text" id="c-word" name="c_word" value="<?php  if(isset($_POST["c_word"])){ echo $_POST["c_word"];}?>">
     <p class="error" id="c-error"><?php if(isset($_POST["c_word"])){echo checkWord($_POST["c_word"],'c');} ?></p>
+
     <br>      
       
     <br>
