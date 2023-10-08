@@ -11,6 +11,7 @@ function calculateAge ($person_arr){
   return $age;
 }
 ?>
+<html>
 <h1>Welcome!</h1>
 <h2>About me:</h2>
 <?php
@@ -23,3 +24,4 @@ echo "<div id=\"favFoodDiv\">Favorite Food: {$about_me["favorite_food"]}</div>";
 
 <h2>Now tell me a little about you.</h2>
 
+</html>

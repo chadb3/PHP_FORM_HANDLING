@@ -1,0 +1,16 @@
+Basic Sanitization with filter_var():
+
+The "filter_var()" function was described as "the most powerful PHP function for sanitizing data" by the Learn section of the lesson. 
+
+filter_var($var, ID);
+
+it will return the sanitized input
+
+or
+
+FALSE
+
+htmlspecialchars would work too but may produce undesired output.
+
+" Choose the sanitization method based on the output you want to show to the users."
+ 
