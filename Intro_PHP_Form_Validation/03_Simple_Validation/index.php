@@ -1,11 +1,11 @@
 <?php
 
-// I was able to resolve most of the warnings by checking if the values are set
+// I was able to resolve most of the warnings by checking if the values are set before echoing 
 //echo phpversion(); 
   function checkWord($userInput,$correctInput)
   {
 
-	if($_SERVER["REQUEST_METHOD"]==="POST" && strtolower($userInput[0] ?? "") !=$correctInput)
+	if($_SERVER["REQUEST_METHOD"]==="POST" && strtolower($userInput[0]) !=$correctInput)
 	{
 		return "* This word must start with the letter {$correctInput}!";
 	} else{
@@ -24,11 +24,7 @@
     <br>
     <input type="text" id="a-word" name="a_word" value="<?php  if(isset($_POST["a_word"])){ echo $_POST["a_word"];}?>">
 	<p class="error" id="a-error">
-	<?php
-	if(isset($_POST["a_word"])){echo checkWord($_POST["a_word"],'a');}
-	
-	
-	?>
+	<?php if(isset($_POST["a_word"])){echo checkWord($_POST["a_word"],'a');} ?>
 	</p>
     <br>      
       
@@ -52,7 +48,7 @@
     <input type="submit" value="Submit Words">
 </form>
 <div>
-    <h3>"a" is for: <?php  if(isset($_POST["b_word"])){ echo $_POST["b_word"];}?><h3>
+    <h3>"a" is for: <?php  if(isset($_POST["b_word"])){ echo $_POST["a_word"];}?><h3>
     <h3>"b" is for: <?php  if(isset($_POST["b_word"])){ echo $_POST["b_word"];}?><h3>
     <h3>"c" is for: <?php  if(isset($_POST["c_word"])){ echo $_POST["c_word"];}?><h3>    
 <div>  
