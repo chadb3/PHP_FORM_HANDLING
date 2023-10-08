@@ -1,5 +1,5 @@
 <?php
-$a_word = $b_word = $c_word = "x";
+
 // I was able to resolve most of the warnings by checking if the values are set
 //echo phpversion(); 
   function checkWord($userInput,$correctInput)
