@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <body>
 <!--Your code goes here-->

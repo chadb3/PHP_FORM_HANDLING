@@ -4,10 +4,15 @@ $user_answer = "";
 $submission_response = "";
 
 // Write your code here:
+if($_SERVER["REQUEST_METHOD"]=== "POST")
+{
+	$user_answer=filter_var($_POST['answer'],FILTER_SANITIZE_NUMBER_INT);
+	if($user_answer==='-5')
+{
+$submission_response="Correct!";
+}else{ $validation_error="* Wrong answer. Try again.";}
 
-
-
-
+}
 
 
 

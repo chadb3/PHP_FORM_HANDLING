@@ -1,0 +1,11 @@
+Using Options with filter_var():
+
+This lesson covers using options with filter_var();
+
+"the filter_var() function accepts an optional third argument that allows us to fine-tune the operation of a given filter."
+
+the option can be used to validate an integer is within a specified range when using the integer validation filter "FILTER_VALIDATE_INT"
+
+you can pass in array to the options field. 
+
+

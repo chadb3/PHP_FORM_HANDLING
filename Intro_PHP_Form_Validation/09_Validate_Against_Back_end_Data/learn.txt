@@ -1,0 +1,9 @@
+Validating Against Back-end Data:
+
+In this lesson, we cover backend validation.
+
+some examples
+
+user authentication
+
+and checking to see if a username is available 

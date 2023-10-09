@@ -1,0 +1,17 @@
+Custom Validations:
+
+This one covers using
+
+preg_match()
+
+to use regex
+
+if it matches 
+
+returns 1
+
+else returns 0
+
+preg_match($pattern,$input);
+
+article also mentions using "strlen($str)" to check the length for a resonable limit. 
