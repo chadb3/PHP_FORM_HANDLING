@@ -1,0 +1,6 @@
+Rerouting:
+
+This has to do with rerouting 
+
+PHP header() function
+

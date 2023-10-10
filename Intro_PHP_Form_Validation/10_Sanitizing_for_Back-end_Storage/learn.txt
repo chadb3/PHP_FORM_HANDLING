@@ -1,0 +1,9 @@
+Sanitizing for Back-end Storage:
+
+This one covers the use of 
+
+preg_replace() 
+
+used like
+
+preg_replace($regex_pattern, $replacement_text, $user_input);
