@@ -1,19 +1,21 @@
 <?php
 session_start();
-echo "session start". " ";
-echo $_SESSION["username"]." ".$_SESSION["count"];
+session_unset();
+session_destroy();
+//header("location:index.php");
 ?><!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
+    <html lang="en">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Successful Login</title>
-    <li><a href="logout.php">logout</a></li>
 </head>
 <body>
-    <h1>You're in!</h1>
+    <h1>You have logged out!</h1>
     <h3>Congrats!</h3>
+    <li><a href="index.php">Home</a></li>
 </body>
 </html>
-
+</html>

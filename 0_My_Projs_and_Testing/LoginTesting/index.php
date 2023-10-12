@@ -1,8 +1,11 @@
 <?php
    //ob_start();
    session_start();
+   
 $validation_error = "";
 $username = "";
+$count=0;
+$_SESSION["count"]=$count;
 $users = ["coolBro123" => "password123!", "coderKid" => "pa55w0rd*", "dogWalker" => "ais1eofdog$"];
 
  if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -11,6 +14,7 @@ $users = ["coolBro123" => "password123!", "coderKid" => "pa55w0rd*", "dogWalker"
    if (isset($users[$username]) && $users[$username] === $password){
 // Add your code here:
 	$_SESSION["username"]=$username;
+	$_SESSION["count"]+=1;
 	header("Location: success.php");
 	exit;
      
