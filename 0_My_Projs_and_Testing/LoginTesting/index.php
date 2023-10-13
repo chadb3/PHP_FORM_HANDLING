@@ -6,7 +6,7 @@ $validation_error = "";
 $username = "";
 $count=0;
 $_SESSION["count"]=$count;
-$users = ["coolBro123" => "password123!", "coderKid" => "pa55w0rd*", "dogWalker" => "ais1eofdog$"];
+$users = ["admin"=>"admin123%","coolBro123" => "password123!", "coderKid" => "pa55w0rd*", "dogWalker" => "ais1eofdog$"];
 
  if ($_SERVER["REQUEST_METHOD"] === "POST") {
    $username = $_POST["username"];
