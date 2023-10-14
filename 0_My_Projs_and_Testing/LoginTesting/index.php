@@ -7,6 +7,7 @@ $username = "";
 $count=0;
 $_SESSION["count"]=$count;
 $users = ["admin"=>"admin123%","coolBro123" => "password123!", "coderKid" => "pa55w0rd*", "dogWalker" => "ais1eofdog$"];
+$permissions=["admin"=>"admin","coolBro123"=>"user","coderKid" => "developer","dogWalker" =>"user"];
 
  if ($_SERVER["REQUEST_METHOD"] === "POST") {
    $username = $_POST["username"];
@@ -15,6 +16,7 @@ $users = ["admin"=>"admin123%","coolBro123" => "password123!", "coderKid" => "pa
 // Add your code here:
 	$_SESSION["username"]=$username;
 	$_SESSION["count"]+=1;
+	$_SESSION["permission"]=$permissions[$username];
 	header("Location: success.php");
 	exit;
      

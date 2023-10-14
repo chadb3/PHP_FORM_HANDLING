@@ -10,6 +10,7 @@ echo $_SESSION["username"]." ".$_SESSION["count"];
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Successful Login</title>
     <li><a href="logout.php">logout</a></li>
+    <li><a href="admin.php">ADMINS ONLY</a></li>
 </head>
 <body>
     <h1>You're in!</h1>
