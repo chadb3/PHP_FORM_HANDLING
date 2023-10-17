@@ -11,6 +11,8 @@ echo $_SESSION["username"]." ".$_SESSION["count"];
     <title>Successful Login</title>
     <li><a href="logout.php">logout</a></li>
     <li><a href="admin.php">ADMINS ONLY</a></li>
+    <li><a href="dev.php">DEV'S PAGE</a></li>
+    <li><a href="users.php">USER'S PAGE</a></li>
 </head>
 <body>
     <h1>You're in!</h1>
