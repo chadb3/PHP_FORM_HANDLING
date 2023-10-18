@@ -1,7 +1,11 @@
 <?php
+include "User.php";
 session_start();
 echo "session start". " ";
-echo $_SESSION["username"]." ".$_SESSION["count"];
+echo $_SESSION["username"]." ".$_SESSION["count"]."<br><br>";
+//testing function call
+
+echo "<h2>".User::printx()."</h2>";
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
