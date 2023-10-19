@@ -20,6 +20,7 @@ echo "<h2>".User::printx()."</h2>";
 </head>
 <body>
     <h1>You're in!</h1>
+    <p><?php $_SESSION["user"]->print_username(); ?></p>
     <h3>Congrats!</h3>
 </body>
 </html>
