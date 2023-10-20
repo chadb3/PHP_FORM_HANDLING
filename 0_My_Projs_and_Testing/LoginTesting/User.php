@@ -16,12 +16,16 @@ class User{
 	public function __construct($user_name,$password)
 	{
 		$this->user_name=$user_name;
-		$this->password=$password;
+		$this->password=hash("sha256",$password);
 	}
 	
 	public function print_username()
 	{
 		echo "<strong>Username: </strong>".$this->user_name;
+	}
+		public function print_pass()
+	{
+		echo "<strong>Password#: </strong>".$this->password;
 	}
 	
 	public static function printx()
