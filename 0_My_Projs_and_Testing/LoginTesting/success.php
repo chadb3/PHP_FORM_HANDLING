@@ -17,11 +17,13 @@ echo "<h2>".User::printx()."</h2>";
     <li><a href="admin.php">ADMINS ONLY</a></li>
     <li><a href="dev.php">DEV'S PAGE</a></li>
     <li><a href="users.php">USER'S PAGE</a></li>
+    <p><?php echo session_id()  ?></p>
 </head>
 <body>
     <h1>You're in!</h1>
     <p><?php $_SESSION["user"]->print_username(); ?></p>
     <p><?php $_SESSION["user"]->print_pass(); ?></p>
+    <p><?php $_SESSION["user"]->print_perm_level();?></p>
     <h3>Congrats!</h3>
 </body>
 </html>

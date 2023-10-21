@@ -14,5 +14,11 @@ if($_SESSION["permission"]!=="admin")
 </head>
 <body>
 <h1>Admin Page</h1>
+<?php
+    foreach ($_SESSION as $key=>$val)
+    {
+    echo $key." ".$val."<br/>";
+}
+    ?>
 </body>
 </html>

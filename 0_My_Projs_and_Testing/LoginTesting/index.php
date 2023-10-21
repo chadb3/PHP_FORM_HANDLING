@@ -19,7 +19,7 @@ $_SESSION["permission"]="default";
 	$_SESSION["username"]=$username;
 	$_SESSION["count"]+=1;
 	$_SESSION["permission"]=$permissions[$username];
-	$user=new User($username,$password);
+	$user=new User($username,$password,$permissions[$username]);
 	$_SESSION["user"]=$user;
 	header("Location: success.php");
 	exit;

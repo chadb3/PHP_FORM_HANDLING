@@ -13,19 +13,25 @@ class User{
 	// future tests is tying the user to a session
 	// and using a database to set users instead of a list/array;
 	
-	public function __construct($user_name,$password)
+	public function __construct($user_name,$password,$permission_level)
 	{
 		$this->user_name=$user_name;
 		$this->password=hash("sha256",$password);
+		$this->permission_level=$permission_level;
 	}
 	
 	public function print_username()
 	{
 		echo "<strong>Username: </strong>".$this->user_name;
 	}
-		public function print_pass()
+	public function print_pass()
 	{
 		echo "<strong>Password#: </strong>".$this->password;
+	}
+	
+	public function print_perm_level()
+	{
+		echo "<strong>Permission_Level#: </strong>".$this->permission_level;
 	}
 	
 	public static function printx()
