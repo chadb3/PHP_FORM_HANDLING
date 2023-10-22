@@ -2,7 +2,7 @@
 session_start();
 session_unset();
 session_destroy();
-$_SESSION["permission"]="default";
+//$_SESSION["permission"]="default";
 //header("location:index.php");
 ?><!DOCTYPE html>
 <html>

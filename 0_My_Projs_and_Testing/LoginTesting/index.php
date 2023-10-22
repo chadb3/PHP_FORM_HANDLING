@@ -18,7 +18,7 @@ $_SESSION["permission"]="default";
 // Add your code here:
 	$_SESSION["username"]=$username;
 	$_SESSION["count"]+=1;
-	$_SESSION["permission"]=$permissions[$username];
+	//$_SESSION["permission"]=$permissions[$username];
 	$user=new User($username,$password,$permissions[$username]);
 	$_SESSION["user"]=$user;
 	header("Location: success.php");

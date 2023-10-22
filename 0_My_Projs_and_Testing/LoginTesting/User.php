@@ -34,6 +34,11 @@ class User{
 		echo "<strong>Permission_Level#: </strong>".$this->permission_level;
 	}
 	
+	public function getPermissionLevel()
+	{
+		return $this->permission_level;
+	}
+	
 	public static function printx()
 	{
 		echo "<h1>Static function \"printx()\" called</h1>";
