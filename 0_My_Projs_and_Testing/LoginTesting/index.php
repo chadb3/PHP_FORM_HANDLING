@@ -2,6 +2,12 @@
 //ob_start();
 include "User.php";
 session_start();
+$db=new SQLITE3("testDB.sqlite3");
+/* The below works as expected.
+ * $results = $db->query('SELECT * FROM USERS');
+while ($row = $results->fetchArray()) {
+    var_dump($row);
+}*/
 $validation_error = "";
 $username = "";
 $count=0;
