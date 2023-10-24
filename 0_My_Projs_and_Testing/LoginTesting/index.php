@@ -1,6 +1,7 @@
 <?php
 //ob_start();
 include "User.php";
+include "dbConnector.php";
 session_start();
 $db=new SQLITE3("testDB.sqlite3");
 /* The below works as expected.
@@ -15,7 +16,9 @@ $_SESSION["count"]=$count;
 $users = ["admin"=>"admin123%","coolBro123" => "password123!", "coderKid" => "pa55w0rd*", "dogWalker" => "ais1eofdog$"];
 $permissions=["admin"=>"admin","coolBro123"=>"user","coderKid" => "developer","dogWalker" =>"user"];
 $_SESSION["permission"]="default";
-
+$db=new dbConnector();
+$db->printUserInfo();
+$db->check_UsernamePassword("admin",hash("sha256","test"));
 
  if ($_SERVER["REQUEST_METHOD"] === "POST") {
    $username = $_POST["username"];
