@@ -19,8 +19,9 @@ $_SESSION["permission"]="default";
 $db=new dbConnector();
  //$db->printUserInfo();
  $res=$db->check_UsernamePassword("admin",hash("sha256","admin123%"));
-
- //echo "<br><h3>res: </h3>{$res['USER_NAME']}<br><h3>pass: </h3>{$res['PASSWORD']}<br>";
+ //$test_val=$res->fetchArray();
+ //echo "<h3>RES: </h3><h2>{$res}</h2><br>";
+ echo "<br><h3>res: </h3>{$res['USER_NAME']}<br><h3>pass: </h3>{$res['PASSWORD']}<br>";
 
  if ($_SERVER["REQUEST_METHOD"] === "POST") {
    $username = $_POST["username"];
