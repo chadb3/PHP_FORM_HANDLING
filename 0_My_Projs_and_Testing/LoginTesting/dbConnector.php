@@ -5,7 +5,7 @@ class dbConnector extends SQLite3
 	protected $db;
 	public function __construct() 
 	{
-         $this->db=new SQLITE3("testDB.sqlite3");
+         $this->db=new SQLITE3("./DB/testDB.sqlite3");
     }
     
     /* Test Function
@@ -33,11 +33,39 @@ class dbConnector extends SQLite3
 	
 	public function check_UsernamePassword($username_in,$password_in)
 	{
-		$result=$this->db->querySingle("SELECT user_name,password from USERS where user_name='{$username_in}'");
+		echo "<h1>{$username_in}</h1><br><h1>{$password_in}</h1><br>";
+		//$result=$this->db->querySingle("SELECT user_name,password from USERS where PASSWORD='{$password_in}' and user_name='{$username_in}'",true);
+		$xe=$this->db->prepare("SELeCT USER_NAME,PASSWORD from USERS WHERE USER_NAME=:un AND PASSWORD=:pass");
+		echo "{$xe->paramCount()}<br>";
+		// found the issue. it was a space at the end of the hashed password for the admin
+		// This was because I manually added the first entries.
+		$xe->bindValue(':un',$username_in,SQLITE3_TEXT);
+		$xe->bindValue(':pass',$password_in,SQLITE3_TEXT);
+		$result=$xe->execute();
 		//if doesn't exist it == NULL
-		//echo $result[0][0];
-		var_dump($result);
-		print_r($result);
+		//echo $result[0];
+		//var_dump($result->fetchArray());
+		//var_dump($xe->getSQL(true));
+		print_r(gettype($result));
+		
+		// Rather than like a normal array, the indexes are the following
+		// USER_NAME
+		// PASSWORD
+		// CASE APPEARS TO MATTER
+		//print_r(array_keys($result));
+		foreach($result as $a)
+		{
+			echo $a;
+		}
+		if($result)
+		{
+			//var_dump($result);
+			echo "<br><h1>Correct</h1><br>";
+		}else{
+			echo "<br><h1>WRONG</h1><br>";
+		}
+		//echo count($result);
+		return $result->fetchArray();
 	}
 }
 

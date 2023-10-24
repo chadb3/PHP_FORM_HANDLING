@@ -3,7 +3,7 @@
 include "User.php";
 include "dbConnector.php";
 session_start();
-$db=new SQLITE3("testDB.sqlite3");
+$db=new SQLITE3("./DB/testDB.sqlite3");
 /* The below works as expected.
  * $results = $db->query('SELECT * FROM USERS');
 while ($row = $results->fetchArray()) {
@@ -17,8 +17,10 @@ $users = ["admin"=>"admin123%","coolBro123" => "password123!", "coderKid" => "pa
 $permissions=["admin"=>"admin","coolBro123"=>"user","coderKid" => "developer","dogWalker" =>"user"];
 $_SESSION["permission"]="default";
 $db=new dbConnector();
-$db->printUserInfo();
-$db->check_UsernamePassword("admin",hash("sha256","test"));
+ //$db->printUserInfo();
+ $res=$db->check_UsernamePassword("admin",hash("sha256","admin123%"));
+
+ //echo "<br><h3>res: </h3>{$res['USER_NAME']}<br><h3>pass: </h3>{$res['PASSWORD']}<br>";
 
  if ($_SERVER["REQUEST_METHOD"] === "POST") {
    $username = $_POST["username"];
