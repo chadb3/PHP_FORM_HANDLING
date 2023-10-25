@@ -18,17 +18,18 @@ $permissions=["admin"=>"admin","coolBro123"=>"user","coderKid" => "developer","d
 $_SESSION["permission"]="default";
 $db=new dbConnector();
  //$db->printUserInfo();
- $res=$db->check_UsernamePassword("admin",hash("sha256","admin123%"));
+ //$res=$db->check_UsernamePassword("admin",hash("sha256","admin123%"));
+ //echo $res;
  //$test_val=$res->fetchArray();
  //echo "<h3>RES: </h3><h2>{$res}</h2><br>";
- echo "<br><h3>res: </h3>{$res['USER_NAME']}<br><h3>pass: </h3>{$res['PASSWORD']}<br>";
+ //echo "<br><h3>res: </h3>{$res['USER_NAME']}<br><h3>pass: </h3>{$res['PASSWORD']}<br>";
 
  if ($_SERVER["REQUEST_METHOD"] === "POST") {
    $username = $_POST["username"];
    $password  = $_POST["password"];
-   if (isset($users[$username]) && $users[$username] === $password){
-// Add your code here:
-	$_SESSION["username"]=$username;
+   if ($res=$db->check_UsernamePassword($username,hash('sha256',$password))/*isset($users[$username]) && $users[$username] === $password*/){
+	//echo "<br><h3>res: </h3>{$res['USER_NAME']}<br><h3>pass: </h3>{$res['PASSWORD']}<br>";
+	$_SESSION["username"]=$res['USER_NAME'];//$username;
 	$_SESSION["count"]+=1;
 	//$_SESSION["permission"]=$permissions[$username];
 	$user=new User($username,$password,$permissions[$username]);

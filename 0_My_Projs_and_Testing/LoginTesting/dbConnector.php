@@ -42,7 +42,8 @@ class dbConnector extends SQLite3
 		// ->paramCount();		
 		// $var->fetchArray()
 		//		- Used to get the ANSWER
-		$xe=$this->db->prepare('select user_name,password from USERS where USER_NAME=:un AND PASSWORD=:pass');
+		//$xe=$this->db->prepare('select user_name,password from USERS where USER_NAME=:un AND PASSWORD=:pass');
+		$xe=$this->db->prepare('select * from USERS where USER_NAME=:un AND PASSWORD=:pass');
 		// found the issue. it was a space at the end of the hashed password for the admin in the SQLite database (so in that case it would not match the generated val).
 		// This was because I manually added the first entries.
 		// in addition I spent an hour or so continuing to troulbeshoot why ->fetchArray() wasn't returining anything at all. Only to find that I didn't save my change in the DB browser...
@@ -51,16 +52,20 @@ class dbConnector extends SQLite3
 		$xe->bindValue(':un',$username_in,SQLITE3_TEXT);
 		$xe->bindValue(':pass',$password_in,SQLITE3_TEXT);
 		$result=$xe->execute();
-		if($result)
+		//var_dump($result);
+		$res_arr=$result->fetchArray();
+		//$result->close();
+		$xe->close();
+		/*if($res_arr)
 		{
 			//var_dump($result);
 			echo "<br><h1>Correct</h1><br>";
 		}else{
 			echo "<br><h1>WRONG</h1><br>";
-		}
+		}*/
 
 
-		return $result->fetchArray();
+		return $res_arr;
 	}
 }
 
