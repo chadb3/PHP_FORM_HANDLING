@@ -63,9 +63,11 @@ class dbConnector extends SQLite3
 		}else{
 			echo "<br><h1>WRONG</h1><br>";
 		}*/
-
-
 		return $res_arr;
+	}
+	public function addUser($username_IN,$password_IN,$permissionLevel_IN,$requestedBy)
+	{
+		echo "NOT YET IMPLEMENTED";
 	}
 }
 

@@ -23,7 +23,7 @@ $db=new dbConnector();
  //$test_val=$res->fetchArray();
  //echo "<h3>RES: </h3><h2>{$res}</h2><br>";
  //echo "<br><h3>res: </h3>{$res['USER_NAME']}<br><h3>pass: </h3>{$res['PASSWORD']}<br>";
-
+	//echo date("F");
  if ($_SERVER["REQUEST_METHOD"] === "POST") {
    $username = $_POST["username"];
    $password  = $_POST["password"];
