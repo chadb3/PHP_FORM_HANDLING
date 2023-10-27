@@ -68,6 +68,11 @@ class dbConnector extends SQLite3
 	public function addUser($username_IN,$password_IN,$permissionLevel_IN,$requestedBy)
 	{
 		echo "NOT YET IMPLEMENTED";
+		$statement=$this->db->prepare("insert into USERS (user_name,permission_level,password) values (:un,:perm,:pass)");
+		$statement->bindValue(":un",$username_IN,SQLITE3_TEXT);
+		$statement->bindValue(":perm",$permissionLevel_IN,SQLITE3_TEXT);
+		$statement->bindValue(":pass",hash("sha256",$password_IN),SQLITE3_TEXT);
+		$statement->execute();
 	}
 }
 

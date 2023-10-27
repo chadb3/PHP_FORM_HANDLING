@@ -1,5 +1,6 @@
 <?php
 include "User.php";
+include "dbConnector.php";
 session_start();
 //echo "session start". " ";
 //echo $_SESSION["username"]." ".$_SESSION["count"]." ".$_SESSION["permission"];
@@ -15,6 +16,6 @@ if($_SESSION["user"]->getPermissionLevel()!=="admin")
 </head>
 <body>
 <h1>Admin Page</h1>
-
+<?php ?>
 </body>
 </html>

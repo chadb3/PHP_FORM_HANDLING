@@ -17,6 +17,7 @@ $users = ["admin"=>"admin123%","coolBro123" => "password123!", "coderKid" => "pa
 $permissions=["admin"=>"admin","coolBro123"=>"user","coderKid" => "developer","dogWalker" =>"user"];
 $_SESSION["permission"]="default";
 $db=new dbConnector();
+$db->addUser("TEST","TesT5(","user","admin");
  //$db->printUserInfo();
  //$res=$db->check_UsernamePassword("admin",hash("sha256","admin123%"));
  //echo $res;
