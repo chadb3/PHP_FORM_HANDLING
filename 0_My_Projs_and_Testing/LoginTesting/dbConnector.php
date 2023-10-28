@@ -73,6 +73,7 @@ class dbConnector extends SQLite3
 		$statement->bindValue(":perm",$permissionLevel_IN,SQLITE3_TEXT);
 		$statement->bindValue(":pass",hash("sha256",$password_IN),SQLITE3_TEXT);
 		$statement->execute();
+		$statement->close();
 	}
 }
 
