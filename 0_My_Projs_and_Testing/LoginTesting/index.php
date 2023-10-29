@@ -18,7 +18,7 @@ $permissions=["admin"=>"admin","coolBro123"=>"user","coderKid" => "developer","d
 $_SESSION["permission"]="default";
 $db=new dbConnector();
 // this worked!
-$db->addUser("TEST","TesT5(","user","admin");
+//$db->addUser("TEST","TesT5(","user","admin");
  //$db->printUserInfo();
  //$res=$db->check_UsernamePassword("admin",hash("sha256","admin123%"));
  //echo $res;

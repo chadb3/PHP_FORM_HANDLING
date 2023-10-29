@@ -43,5 +43,9 @@ class User{
 	{
 		echo "<h1>Static function \"printx()\" called</h1>";
 	}
+	public function getUserName()
+	{
+		return $this->user_name;
+	}
 }
 ?>

@@ -34,7 +34,16 @@ if($_SESSION["user"]->getPermissionLevel()!=="admin")
 </select>
 <br><br>
 <input type="submit" value="Submit">
-<?php echo $_POST["uname"];?>
+<?php 
+if($_SERVER["REQUEST_METHOD"] == "POST")
+{
+echo $_POST["uname"];
+$db->addUser($_POST["uname"],$_POST["pword"],$_POST["access_level"],$_SESSION["user"]->getUserName());
+//todo add more checks.
+// see why it appears to call a function before I press the button.
+// set min lengths for input to prevent blank inputs.
+}
+?>
 </form>
 <?php ?>
 </body>
