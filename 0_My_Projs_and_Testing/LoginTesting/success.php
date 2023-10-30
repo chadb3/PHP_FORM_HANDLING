@@ -6,10 +6,10 @@ session_start();
 //testing function call
 //echo "<h2>".User::printx()."</h2>";
 //echo session_id()
-function testFunc()
+/*function testFunc()
 {
 	echo "ASDF";
-}
+}*/
 // gets the links based off of User permissions
 function getLinks()
 {
@@ -44,7 +44,7 @@ function getLinks()
     <li><a href="dev.php">DEV'S PAGE</a></li>
     <li><a href="users.php">USER'S PAGE</a></li>-->
     <h1>You're in!</h1>
-    <p><?php testFunc();getLinks();?></p>
+    <p><?php /*testFunc();*/getLinks();?></p>
     <p><?php $_SESSION["user"]->print_username(); ?></p>
     <p><?php $_SESSION["user"]->print_pass(); ?></p>
     <p><?php $_SESSION["user"]->print_perm_level();?></p>

@@ -10,6 +10,7 @@ if($_SESSION["user"]->getPermissionLevel()!=="admin")
 	header('HTTP/1.1 403 Forbidden');
 	echo "\n<h1>Access Denied!</h1>";
 }else{echo "<h3>Welcome Admin!</h3>";}
+$db->getUsers();
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -37,11 +38,20 @@ if($_SESSION["user"]->getPermissionLevel()!=="admin")
 <?php 
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
-echo $_POST["uname"];
+//echo $_POST["uname"];
 $db->addUser($_POST["uname"],$_POST["pword"],$_POST["access_level"],$_SESSION["user"]->getUserName());
 //todo add more checks.
 // see why it appears to call a function before I press the button.
 // set min lengths for input to prevent blank inputs.
+echo "<script>$.ajax{
+	const rhttp=new XMLHttpRequest();
+	rhttp.send();
+	}
+</script>";echo "<script>$.ajax{
+	const rhttp=new XMLHttpRequest();
+	rhttp.send();
+	}
+</script>";
 }
 ?>
 </form>
