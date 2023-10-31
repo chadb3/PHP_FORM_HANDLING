@@ -55,6 +55,5 @@ echo "<script>$.ajax{
 }
 ?>
 </form>
-<?php ?>
 </body>
 </html>
