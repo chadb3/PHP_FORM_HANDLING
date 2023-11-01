@@ -1,6 +1,7 @@
 <?php
 include "User.php";
 include "dbConnector.php";
+include "getUsers.php";
 $db=new dbConnector();
 session_start();
 //echo "session start". " ";
@@ -10,7 +11,8 @@ if($_SESSION["user"]->getPermissionLevel()!=="admin")
 	header('HTTP/1.1 403 Forbidden');
 	echo "\n<h1>Access Denied!</h1>";
 }else{echo "<h3>Welcome Admin!</h3>";}
-$db->getUsers();
+
+//getUsers()
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +21,10 @@ $db->getUsers();
 <body>
 
 <h1>Admin Page</h1>
+<br><br>
+<?php $db->getUsers();
+//testFunc();
+?>
 <br><br>
 <h2>Add New User:</h2>
 <p> use this to add new users</p>
@@ -44,10 +50,6 @@ $db->addUser($_POST["uname"],$_POST["pword"],$_POST["access_level"],$_SESSION["u
 // see why it appears to call a function before I press the button.
 // set min lengths for input to prevent blank inputs.
 echo "<script>$.ajax{
-	const rhttp=new XMLHttpRequest();
-	rhttp.send();
-	}
-</script>";echo "<script>$.ajax{
 	const rhttp=new XMLHttpRequest();
 	rhttp.send();
 	}

@@ -3,7 +3,7 @@
 include "User.php";
 include "dbConnector.php";
 session_start();
-$db=new SQLITE3("./DB/testDB.sqlite3");
+//$db=new SQLITE3("./DB/testDB.sqlite3");
 /* The below works as expected.
  * $results = $db->query('SELECT * FROM USERS');
 while ($row = $results->fetchArray()) {
