@@ -22,7 +22,14 @@ if($_SESSION["user"]->getPermissionLevel()!=="admin")
 
 <h1>Admin Page</h1>
 <br><br>
-<?php $db->getUsers();
+<?php 
+
+$db->getUsers();
+if($_SERVER["REQUEST_METHOD"] === "POST")
+{
+	$db->getUsers();
+	//echo "<br><h1>AHHHHHHHHHHHHH</h1><br><br>";
+	}else{$db->getUsers();}
 //testFunc();
 ?>
 <br><br>
@@ -42,18 +49,25 @@ if($_SESSION["user"]->getPermissionLevel()!=="admin")
 <br><br>
 <input type="submit" value="Submit">
 <?php 
-if($_SERVER["REQUEST_METHOD"] == "POST")
+if($_SERVER["REQUEST_METHOD"] === "POST")
 {
 //echo $_POST["uname"];
 $db->addUser($_POST["uname"],$_POST["pword"],$_POST["access_level"],$_SESSION["user"]->getUserName());
+$_POST["uname"]="";
+$_POST["pword"]="";
+$_POST["access_level"]="";
+//$_SESSION["user"]="";
 //todo add more checks.
 // see why it appears to call a function before I press the button.
 // set min lengths for input to prevent blank inputs.
-echo "<script>$.ajax{
+/*echo "<script>$.ajax{
 	const rhttp=new XMLHttpRequest();
 	rhttp.send();
 	}
-</script>";
+</script>";*/
+// note seems to work without ajax...
+// but still seems to not update the list until an additional name is added.
+//echo "<br><h1>HIT add user</h1><br>";
 }
 ?>
 </form>

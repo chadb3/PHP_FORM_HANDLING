@@ -3,9 +3,11 @@
 class dbConnector extends SQLite3
 {
 	protected $db;
+	//public $count;
 	public function __construct() 
 	{
          $this->db=new SQLITE3("./DB/testDB.sqlite3");
+         //$this->count=0;
     }
     
     /* Test Function
@@ -46,6 +48,8 @@ class dbConnector extends SQLite3
 	
 	public function getUsers()
 	{
+		//$this->count+=1;
+		//echo "<br>{$this->count}<br>";
 		$result=$this->db->query("SELECT user_name,permission_level FROM USERS");
 		//$result=$statement->execute();
 		//$result->close();
