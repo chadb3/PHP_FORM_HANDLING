@@ -48,7 +48,7 @@
     <input type="submit" value="Submit Words">
 </form>
 <div>
-    <h3>"a" is for: <?php  if(isset($_POST["b_word"])){ echo $_POST["a_word"];}?><h3>
+    <h3>"a" is for: <?php  if(isset($_POST["a_word"])){ echo $_POST["a_word"];}?><h3>
     <h3>"b" is for: <?php  if(isset($_POST["b_word"])){ echo $_POST["b_word"];}?><h3>
     <h3>"c" is for: <?php  if(isset($_POST["c_word"])){ echo $_POST["c_word"];}?><h3>    
 <div>  

@@ -24,12 +24,14 @@ if($_SESSION["user"]->getPermissionLevel()!=="admin")
 <br><br>
 <?php 
 
-$db->getUsers();
+
+
+//$db->getUsers();
 if($_SERVER["REQUEST_METHOD"] === "POST")
 {
 	$db->getUsers();
 	//echo "<br><h1>AHHHHHHHHHHHHH</h1><br><br>";
-	}else{$db->getUsers();}
+	}else{$db->getUsers();echo "<br><br><h1>asdf</h1><br><br>";}
 //testFunc();
 ?>
 <br><br>
@@ -52,10 +54,20 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
 if($_SERVER["REQUEST_METHOD"] === "POST")
 {
 //echo $_POST["uname"];
-$db->addUser($_POST["uname"],$_POST["pword"],$_POST["access_level"],$_SESSION["user"]->getUserName());
-$_POST["uname"]="";
+if(isset($_POST["uname"])&&isset($_POST["pword"])&&isset($_POST["access_level"])&&isset($_SESSION["user"]))
+{
+	if($_POST["uname"]!=""&&$_POST["uname"]!="")
+	{
+		$db->addUser($_POST["uname"],$_POST["pword"],$_POST["access_level"],$_SESSION["user"]->getUserName());
+		header("Location:admin.php");
+	}
+
+}else{
+	echo "<br><h2>Something not set!</h2><br>";
+}
+/*$_POST["uname"]="";
 $_POST["pword"]="";
-$_POST["access_level"]="";
+$_POST["access_level"]="";*/
 //$_SESSION["user"]="";
 //todo add more checks.
 // see why it appears to call a function before I press the button.
