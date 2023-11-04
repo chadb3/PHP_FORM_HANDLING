@@ -48,11 +48,21 @@ class dbConnector extends SQLite3
 	
 	public function getUsers()
 	{
+		// Try PHP pagination
 		//$this->count+=1;
 		//echo "<br>{$this->count}<br>";
 		$result=$this->db->query("SELECT user_name,permission_level FROM USERS");
+		$result_count=$this->db->query("SELECT count(user_name) FROM USERS");
 		//$result=$statement->execute();
 		//$result->close();
+		// note this doesn't work as it calls it
+		//$xs=$result->fetchArray();
+		//$y=count($xs);
+		//echo "\n<h1>{$y}</h1>\n";
+		echo "{$result->numColumns()}";
+		$row = $result_count->fetchArray();
+		echo "<br>Number of Users: ".$row[0]."<br>";
+		echo count($result);
 		echo"<style>
 table, th, td {
   border:1px solid black;
