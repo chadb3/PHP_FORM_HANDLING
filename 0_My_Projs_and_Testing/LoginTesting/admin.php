@@ -31,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
 {
 	$db->getUsers();
 	//echo "<br><h1>AHHHHHHHHHHHHH</h1><br><br>";
-	}else{$db->getUsers();echo "<br><br><h1>asdf</h1><br><br>";}
+	}else{$db->getUsers();/*echo "<br><br><h1>asdf</h1><br><br>";*/}
 //testFunc();
 ?>
 <br><br>

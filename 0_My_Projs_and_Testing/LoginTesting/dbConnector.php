@@ -60,9 +60,9 @@ class dbConnector extends SQLite3
 		//$y=count($xs);
 		//echo "\n<h1>{$y}</h1>\n";
 		echo "{$result->numColumns()}";
-		$row = $result_count->fetchArray();
-		echo "<br>Number of Users: ".$row[0]."<br>";
-		echo count($result);
+		$user_count_num = $result_count->fetchArray();
+		echo "<br>Number of Users: ".$user_count_num[0]."<br>";
+		//echo count($result);
 		echo"<style>
 table, th, td {
   border:1px solid black;
@@ -70,17 +70,22 @@ table, th, td {
 </style>";
 		echo "
 		<table>
+		<th>#</th>
 		<th>User</th>
 		<th>User Permission</th>
 		<tr>";
-		
-		while ($row = $result->fetchArray()) 
+		for($i=0;$i<$user_count_num[0];$i++)
 		{
-			echo "<tr>";
-			echo "<td>{$row[0]}</td>";
-			echo "<td>{$row[1]}</td>";
-			echo "</tr>";
-		}
+			//while ($row = $result->fetchArray()) 
+			//{
+				$row = $result->fetchArray();
+				echo "<tr>";
+				echo "<td>{$i}</td>";
+				echo "<td>{$row[0]}</td>";
+				echo "<td>{$row[1]}</td>";
+				echo "</tr>";
+			//}
+	}
 		echo "</tr> </table>";
 	}
 	
