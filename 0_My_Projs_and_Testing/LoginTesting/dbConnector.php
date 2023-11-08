@@ -79,7 +79,7 @@ table, th, td {
 		<th>User Permission</th>
 		<tr>";
 		//for($i=0;$i<$user_count_num[0];$i++)
-		for($i=0;$i<$loopNum;$i++)
+		for($i=1;$i<$loopNum+1;$i++)
 		{
 			//while ($row = $result->fetchArray()) 
 			//{
