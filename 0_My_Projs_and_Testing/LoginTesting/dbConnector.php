@@ -51,8 +51,8 @@ class dbConnector extends SQLite3
 		// Try PHP pagination
 		//$this->count+=1;
 		//echo "<br>{$this->count}<br>";
-		$result=$this->db->query("SELECT user_name,permission_level FROM USERS");
-		$result_count=$this->db->query("SELECT count(user_name) FROM USERS");
+		$result=$this->db->query("SELECT user_name,permission_level FROM USERS LIMIT 10");
+		$result_count=$this->db->query("SELECT count(user_name) FROM USERS LIMIT 10");
 		//$result=$statement->execute();
 		//$result->close();
 		// note this doesn't work as it calls it
@@ -61,7 +61,11 @@ class dbConnector extends SQLite3
 		//echo "\n<h1>{$y}</h1>\n";
 		echo "{$result->numColumns()}";
 		$user_count_num = $result_count->fetchArray();
+		$loopNum=0;
+		$user_count_num>10?$loopNum=10:$loopNum=$user_count_num;
+		$numPages=ceil($user_count_num[0]/10);
 		echo "<br>Number of Users: ".$user_count_num[0]."<br>";
+		echo "<br>Number of Pages needed: ".$numPages."<br>";
 		//echo count($result);
 		echo"<style>
 table, th, td {
@@ -74,7 +78,8 @@ table, th, td {
 		<th>User</th>
 		<th>User Permission</th>
 		<tr>";
-		for($i=0;$i<$user_count_num[0];$i++)
+		//for($i=0;$i<$user_count_num[0];$i++)
+		for($i=0;$i<$loopNum;$i++)
 		{
 			//while ($row = $result->fetchArray()) 
 			//{
