@@ -65,7 +65,12 @@ class dbConnector extends SQLite3
 		$user_count_num>10?$loopNum=10:$loopNum=$user_count_num;
 		$numPages=ceil($user_count_num[0]/10);
 		echo "<br>Number of Users: ".$user_count_num[0]."<br>";
-		echo "<br>Number of Pages needed: ".$numPages."<br>";
+		echo "<br>Min Number of Pages needed (10 per page): ".$numPages."<br><br>";
+		/*
+		 * Now instead of
+		 * $result=$this->db->query("SELECT user_name,permission_level FROM USERS LIMIT 10");
+		 * I need to requery with a changing offset.
+		 */
 		//echo count($result);
 		echo"<style>
 table, th, td {
@@ -92,7 +97,14 @@ table, th, td {
 			//}
 	}
 		echo "</tr> </table>";
-	}
+		echo " <button type=\"button\">Test Button!</button><br>";
+		for($i=0;$i<$numPages;$i++)
+		{
+			$val=$i+1;
+			echo " <button type=\"button\">{$val}</button> ";
+		}
+		
+	}//end of getUsers();
 	
 }
 
