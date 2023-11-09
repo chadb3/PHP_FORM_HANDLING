@@ -59,7 +59,7 @@ class dbConnector extends SQLite3
 		//$xs=$result->fetchArray();
 		//$y=count($xs);
 		//echo "\n<h1>{$y}</h1>\n";
-		echo "{$result->numColumns()}";
+		//echo "{$result->numColumns()}";
 		$user_count_num = $result_count->fetchArray();
 		$loopNum=0;
 		$user_count_num>10?$loopNum=10:$loopNum=$user_count_num;
@@ -84,18 +84,25 @@ table, th, td {
 		<th>User Permission</th>
 		<tr>";
 		//for($i=0;$i<$user_count_num[0];$i++)
-		for($i=1;$i<$loopNum+1;$i++)
+		for($k=0;$k<$numPages;$k++)
 		{
-			//while ($row = $result->fetchArray()) 
-			//{
-				$row = $result->fetchArray();
-				echo "<tr>";
-				echo "<td>{$i}</td>";
-				echo "<td>{$row[0]}</td>";
-				echo "<td>{$row[1]}</td>";
-				echo "</tr>";
-			//}
-	}
+			$offset=$k*10;
+			$result=$this->db->query("SELECT user_name,permission_level FROM USERS LIMIT 10 OFFSET {$offset}");
+			//$user_count_num = $result_count->fetchArray();
+			//$user_count_num>10?$loopNum=10:$loopNum=$user_count_num;
+			for($i=1;$i<$loopNum+1;$i++)
+			{
+				//while ($row = $result->fetchArray()) 
+				//{
+					$row = $result->fetchArray();
+					echo "<tr>";
+					echo "<td>{$i}</td>";
+					echo "<td>{$row[0]}</td>";
+					echo "<td>{$row[1]}</td>";
+					echo "</tr>";
+				//}
+			}
+		}
 		echo "</tr> </table>";
 		echo " <button type=\"button\">Test Button!</button><br>";
 		for($i=0;$i<$numPages;$i++)
