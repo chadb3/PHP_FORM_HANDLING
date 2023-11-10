@@ -48,30 +48,15 @@ class dbConnector extends SQLite3
 	
 	public function getUsers()
 	{
-		// Try PHP pagination
-		//$this->count+=1;
-		//echo "<br>{$this->count}<br>";
-		$result=$this->db->query("SELECT user_name,permission_level FROM USERS LIMIT 10");
-		$result_count=$this->db->query("SELECT count(user_name) FROM USERS LIMIT 10");
-		//$result=$statement->execute();
-		//$result->close();
-		// note this doesn't work as it calls it
-		//$xs=$result->fetchArray();
-		//$y=count($xs);
-		//echo "\n<h1>{$y}</h1>\n";
-		//echo "{$result->numColumns()}";
+		$ic=1;
+		$result=$this->db->query("SELECT user_name,permission_level FROM USERS LIMIT 10;");
+		$result_count=$this->db->query("SELECT count(user_name) FROM USERS LIMIT 10;");
 		$user_count_num = $result_count->fetchArray();
 		$loopNum=0;
 		$user_count_num>10?$loopNum=10:$loopNum=$user_count_num;
 		$numPages=ceil($user_count_num[0]/10);
 		echo "<br>Number of Users: ".$user_count_num[0]."<br>";
 		echo "<br>Min Number of Pages needed (10 per page): ".$numPages."<br><br>";
-		/*
-		 * Now instead of
-		 * $result=$this->db->query("SELECT user_name,permission_level FROM USERS LIMIT 10");
-		 * I need to requery with a changing offset.
-		 */
-		//echo count($result);
 		echo"<style>
 table, th, td {
   border:1px solid black;
@@ -79,29 +64,31 @@ table, th, td {
 </style>";
 		echo "
 		<table>
+		<th>##</th>
 		<th>#</th>
 		<th>User</th>
 		<th>User Permission</th>
 		<tr>";
-		//for($i=0;$i<$user_count_num[0];$i++)
 		for($k=0;$k<$numPages;$k++)
 		{
 			$offset=$k*10;
 			$result=$this->db->query("SELECT user_name,permission_level FROM USERS LIMIT 10 OFFSET {$offset}");
-			//$user_count_num = $result_count->fetchArray();
-			//$user_count_num>10?$loopNum=10:$loopNum=$user_count_num;
+
+			if($k==3){$loopNum=$user_count_num[0]%10;}
 			for($i=1;$i<$loopNum+1;$i++)
 			{
-				//while ($row = $result->fetchArray()) 
-				//{
+
 					$row = $result->fetchArray();
 					echo "<tr>";
+					echo "<td>{$ic}</td>";
 					echo "<td>{$i}</td>";
 					echo "<td>{$row[0]}</td>";
 					echo "<td>{$row[1]}</td>";
 					echo "</tr>";
-				//}
+					$ic++;
+
 			}
+			echo "<br>PAGEd: {$k}<br>";
 		}
 		echo "</tr> </table>";
 		echo " <button type=\"button\">Test Button!</button><br>";
