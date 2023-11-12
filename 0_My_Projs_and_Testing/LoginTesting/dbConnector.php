@@ -84,11 +84,12 @@ table, th, td {
 					echo "<td>{$i}</td>";
 					echo "<td>{$row[0]}</td>";
 					echo "<td>{$row[1]}</td>";
+					echo "<td><a>Edit</a></td>";
 					echo "</tr>";
 					$ic++;
 
 			}
-			echo "<br>PAGEd: {$k}<br>";
+			//echo "<br>PAGE: {$k}<br>";
 		}
 		echo "</tr> </table>";
 		echo " <button type=\"button\">Test Button!</button><br>";
