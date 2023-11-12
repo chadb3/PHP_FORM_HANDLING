@@ -10,7 +10,7 @@ if($_SESSION["user"]->getPermissionLevel()!=="admin")
 {
 	header('HTTP/1.1 403 Forbidden');
 	echo "\n<h1>Access Denied!</h1>";
-}else{echo "<h3>Welcome Admin!</h3>";}
+}else{echo "<h3>Welcome Admin!</h3>";
 
 //getUsers()
 ?><!DOCTYPE html>
@@ -81,7 +81,7 @@ $_POST["access_level"]="";*/
 // but still seems to not update the list until an additional name is added.
 //echo "<br><h1>HIT add user</h1><br>";
 }
-?>
+}?>
 </form>
 </body>
 </html>
