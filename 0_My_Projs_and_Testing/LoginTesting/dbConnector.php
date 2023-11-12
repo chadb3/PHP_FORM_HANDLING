@@ -84,7 +84,7 @@ table, th, td {
 					echo "<td>{$i}</td>";
 					echo "<td>{$row[0]}</td>";
 					echo "<td>{$row[1]}</td>";
-					echo "<td><a>Edit</a></td>";
+					echo "<td><a href=\"edit_user.php\?name={$row[0]}\">Edit</a></td>";
 					echo "</tr>";
 					$ic++;
 
