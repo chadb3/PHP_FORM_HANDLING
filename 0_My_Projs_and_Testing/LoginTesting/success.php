@@ -24,6 +24,7 @@ function getLinks()
 	{
 		echo "<li><a href=\"users.php\">USER'S PAGE</a></li>";
 	}else{
+		echo "<br><h1>Perm: {$perm}</h1><br>";
 		echo "<li><a href=\"logout.php\"><h1>ADMINS ONLY</h1></a></li>";
 		echo "<li><a href=\"logout.php\"><h1>PASSWORDS</h1></a></li>";
 	}
