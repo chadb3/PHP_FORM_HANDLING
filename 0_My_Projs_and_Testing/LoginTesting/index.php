@@ -13,8 +13,8 @@ $validation_error = "";
 $username = "";
 $count=0;
 $_SESSION["count"]=$count;
-$users = ["admin"=>"admin123%","coolBro123" => "password123!", "coderKid" => "pa55w0rd*", "dogWalker" => "ais1eofdog$"];
-$permissions=["admin"=>"admin","coolBro123"=>"user","coderKid" => "developer","dogWalker" =>"user"];
+//$users = ["admin"=>"admin123%","coolBro123" => "password123!", "coderKid" => "pa55w0rd*", "dogWalker" => "ais1eofdog$"];
+//$permissions=["admin"=>"admin","coolBro123"=>"user","coderKid" => "developer","dogWalker" =>"user"];
 $_SESSION["permission"]="default";
 $db=new dbConnector();
 // this worked!
