@@ -89,7 +89,6 @@ table, th, td {
 					$ic++;
 
 			}
-			//echo "<br>PAGE: {$k}<br>";
 		}
 		echo "</tr> </table>";
 		echo " <button type=\"button\">Test Button!</button><br>";
