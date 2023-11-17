@@ -14,8 +14,9 @@ if($_SESSION["user"]->getPermissionLevel()!=="admin")
 	<title>Editing: <?= $_GET["name"]; ?></title>
 	<style>
 		h1{display:inline;padding-right:.5em;}
+		.i{font-size:34;}
 	</style>
 </head>
-<?php echo "<h1>Edit User:</h1>    <i>{$_GET["name"]}</i>";?>
+<?php echo "<h1>Edit User:</h1>    <i style=\"color:red;font-size:34px;\">{$_GET["name"]}</i>";?>
 <?php }?>
 </html>
