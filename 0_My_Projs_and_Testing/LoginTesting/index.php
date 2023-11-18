@@ -28,8 +28,7 @@ $db=new dbConnector();
    }
  }
 
-?>
-  
+?><!DOCTYPE HTML>
 <h3>Welcome back!</h3>
 <form method="post" action="">
 Username:<input type="text" name="username" value="<?php echo $username;?>">
@@ -41,5 +40,5 @@ Password:<input type="text" name="password" value="">
 <input type="submit" value="Log in">
 </form>
   
-  
+</HTML>
 

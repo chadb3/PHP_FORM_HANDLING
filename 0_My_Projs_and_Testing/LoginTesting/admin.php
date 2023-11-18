@@ -50,6 +50,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
 </select>
 <br><br>
 <input type="submit" value="Submit">
+
 <?php 
 if($_SERVER["REQUEST_METHOD"] === "POST")
 {
@@ -65,21 +66,11 @@ if(isset($_POST["uname"])&&isset($_POST["pword"])&&isset($_POST["access_level"])
 }else{
 	echo "<br><h2>Something not set!</h2><br>";
 }
-/*$_POST["uname"]="";
-$_POST["pword"]="";
-$_POST["access_level"]="";*/
-//$_SESSION["user"]="";
+
 //todo add more checks.
 // see why it appears to call a function before I press the button.
 // set min lengths for input to prevent blank inputs.
-/*echo "<script>$.ajax{
-	const rhttp=new XMLHttpRequest();
-	rhttp.send();
-	}
-</script>";*/
-// note seems to work without ajax...
-// but still seems to not update the list until an additional name is added.
-//echo "<br><h1>HIT add user</h1><br>";
+
 }
 }?>
 </form>

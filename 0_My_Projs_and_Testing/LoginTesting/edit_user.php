@@ -18,5 +18,19 @@ if($_SESSION["user"]->getPermissionLevel()!=="admin")
 	</style>
 </head>
 <?php echo "<h1>Edit User:</h1>    <i style=\"color:red;font-size:34px;\">{$_GET["name"]}</i>";?>
+<form method="post">
+	<label for="uname">USERNAME:</label><br>
+	<input type="text" id="uname" name="uname"><br>
+	<label for="uname">PASSWORD:</label><br>
+	<input type="text" id="pword" name="pword"><br>
+	<label for="uname">Access Level:</label><br>
+	<select id="access_level" name="access_level">
+		<option value="user">User</option>
+		<option value="dev">Developer</option>
+		<option value="admin">Admin</option>
+	</select>
+	<br><br>
+	<input type="submit" value="Submit">
+</form>
 <?php }?>
 </html>
