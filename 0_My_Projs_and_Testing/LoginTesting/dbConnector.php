@@ -74,7 +74,7 @@ table, th, td {
 			$offset=$k*10;
 			$result=$this->db->query("SELECT user_name,permission_level FROM USERS LIMIT 10 OFFSET {$offset}");
 
-			if($k==3){$loopNum=$user_count_num[0]%10;}
+			if($k==4){$loopNum=$user_count_num[0]%10;}
 			for($i=1;$i<$loopNum+1;$i++)
 			{
 
