@@ -22,18 +22,7 @@ if($_SESSION["user"]->getPermissionLevel()!=="admin")
 
 <h1>Admin Page</h1>
 <br><br>
-<?php 
 
-
-
-//$db->getUsers();
-if($_SERVER["REQUEST_METHOD"] === "POST")
-{
-	$db->getUsers();
-	//echo "<br><h1>AHHHHHHHHHHHHH</h1><br><br>";
-	}else{$db->getUsers();/*echo "<br><br><h1>asdf</h1><br><br>";*/}
-//testFunc();
-?>
 <br><br>
 <h2>Add New User:</h2>
 <p> use this to add new users</p>
@@ -50,7 +39,6 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
 </select>
 <br><br>
 <input type="submit" value="Submit">
-
 <?php 
 if($_SERVER["REQUEST_METHOD"] === "POST")
 {
@@ -73,6 +61,18 @@ if(isset($_POST["uname"])&&isset($_POST["pword"])&&isset($_POST["access_level"])
 
 }
 }?>
+
 </form>
+<?php 
+
+
+
+if($_SERVER["REQUEST_METHOD"] === "POST")
+{
+	$db->getUsers();
+
+}else{$db->getUsers();}
+
+?>
 </body>
 </html>
